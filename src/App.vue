@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <beers-table></beers-table>
+    <beers-table v-bind:beers="beers"></beers-table>
   </div>
 </template>
 

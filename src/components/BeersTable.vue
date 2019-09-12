@@ -6,20 +6,21 @@
       <th>IMG</th>
       <th></th>
     </thead>
-    <tbody>
-
-    </tbody>
-  </table>
-  
+      <tbody>
+        <table-component v-for="(beer, index) in beers" v-bind:beer="beer" v-bind:key="index"></table-component>
+      </tbody>
+    </table>
 </template>
 
 <script>
-
+import TableComponent from './TableComponent'
 
 export default {
   name: 'beers-table',
   props: ['beers'],
-  components: {}
+  components: {
+    "table-component": TableComponent
+  }
 }
 </script>
 
