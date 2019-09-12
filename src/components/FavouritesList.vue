@@ -1,5 +1,5 @@
 <template>
-  <article v-if="favourites">
+  <article v-if="favourites.length > 0">
     <h2>Favourite Beer List</h2>
     <ul v-for="(beer, index) in favourites" :key="index">
       <li v-on:click="handleClick(beer, index)">{{beer.name}}</li>
@@ -23,5 +23,7 @@ export default {
 
 
 <style lang="css" scoped>
-
+  article {
+    text-align: left;
+  }
 </style>
