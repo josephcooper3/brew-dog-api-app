@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    
-
+    <beers-table></beers-table>
   </div>
 </template>
 
 <script>
-
+import BeersTable from './components/BeersTable'
 
 export default {
   name: 'app',
@@ -21,6 +20,7 @@ export default {
     .then(beers => this.beers = beers)
   },
   components: {
+    "beers-table": BeersTable,
   }
 }
 </script>
