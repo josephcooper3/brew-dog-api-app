@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <beer-detail v-bind:beer="selectedBeer"></beer-detail>
-    <beers-table v-bind:beers="beers"></beers-table>
+    <beer-detail :beer="selectedBeer"></beer-detail>
+    <favourites-list :favourites="favouriteBeers"></favourites-list>
+    <beers-table :beers="beers"></beers-table>
   </div>
 </template>
 
@@ -17,7 +18,6 @@ export default {
     return {
       beers: [],
       selectedBeer: null,
-      favourites: []
     }
   },
   mounted () {

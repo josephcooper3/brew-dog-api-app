@@ -1,11 +1,23 @@
 <template>
-  
+  <article v-if="favourites">
+    <h2>Favourite Beer List</h2>
+    <ul v-for="(beer, index) in favourites" :key="index">
+      <li v-on:click="handleClick(beer, index)">{{beer.name}}</li>
+    </ul>
+  </article>
 </template>
 
 <script>
+import { eventBus } from '../main'
+
 export default {
   name: 'favourites-list',
-  props: ['favourites']
+  props: ['favourites'],
+  methods: {
+    handleClick(beer, index) {
+      eventBus.$emit('beer-selected', this.favourites[index])
+    }
+  }
 }
 </script>
 
