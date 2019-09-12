@@ -27,10 +27,15 @@ export default {
       beer.isFavourite = false
       return beer
     }))
-
+  
     eventBus.$on('beer-selected', (beer) => {
       this.selectedBeer = beer
     })
+  },
+  computed: {
+    favouriteBeers: function () {
+      return this.beers.filter((beer) => beer.isFavourite === true)
+    }
   },
   components: {
     "beers-table": BeersTable,
