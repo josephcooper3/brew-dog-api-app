@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <beer-detail v-bind:beer="selectedBeer"></beer-detail>
     <beers-table v-bind:beers="beers"></beers-table>
   </div>
 </template>
 
 <script>
 import BeersTable from './components/BeersTable'
+import BeerDetail from './components/BeerDetail'
 import { eventBus } from './main'
 
 export default {
@@ -27,6 +29,7 @@ export default {
   },
   components: {
     "beers-table": BeersTable,
+    "beer-detail": BeerDetail
   }
 }
 </script>
