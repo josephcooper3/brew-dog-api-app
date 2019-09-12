@@ -1,10 +1,11 @@
 <template>
-  <tr v-on:click="handleClick">
-    <td>{{beer.name}}</td>
-    <td>{{beer.tagline}}</td>
-    <td>
+  <tr>
+    <td v-on:click="handleClick">
       <img :src="beer.image_url">
     </td>
+    <td>{{beer.name}}</td>
+    <td>{{beer.tagline}}</td>
+
     <td>
       <input type="checkbox" v-on:change="handleCheckbox">
     </td>
@@ -34,5 +35,8 @@ export default {
 <style lang="css" scoped>
   img {
     width: 25px;
+  }
+  img:hover {
+    cursor: pointer;
   }
 </style>

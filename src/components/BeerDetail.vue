@@ -1,10 +1,8 @@
 <template>
   <article v-if="beer">
-    <ul>
-      <li><h2>{{beer.name}} ({{beer.abv}}%)</h2></li>
-      <li><h3>{{beer.tagline}}</h3></li>
-      <li>{{beer.description}}</li>
-    </ul>
+    <h2>{{beer.name}} ({{beer.abv}}%)</h2>
+    <h3>{{beer.tagline}}</h3>
+    <p>{{beer.description}}</p>
   </article>
 </template>
 

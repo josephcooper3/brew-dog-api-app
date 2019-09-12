@@ -1,10 +1,10 @@
 <template>
   <table>
     <thead>
+      <th></th>
       <th>Name</th>
       <th>Tagline</th>
-      <th>IMG</th>
-      <th></th>
+      <th>Add to Faves</th>
     </thead>
       <tbody>
         <table-component v-for="(beer, index) in beers" v-bind:beer="beer" v-bind:key="index"></table-component>
