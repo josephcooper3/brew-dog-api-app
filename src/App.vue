@@ -24,7 +24,7 @@ export default {
     fetch('https://api.punkapi.com/v2/beers')
     .then(result => result.json())
     .then(beers => this.beers = beers.map(beer => {
-      beer.favourite = false
+      beer.isFavourite = false
       return beer
     }))
 

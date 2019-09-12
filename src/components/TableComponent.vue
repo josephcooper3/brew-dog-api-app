@@ -6,7 +6,7 @@
       <img :src="beer.image_url">
     </td>
     <td>
-      <input type="checkbox" v-on:click="handleCheckbox">
+      <input type="checkbox" v-on:change="handleCheckbox">
     </td>
   </tr>
 </template>
@@ -15,6 +15,7 @@
 
 <script>
 import { eventBus } from '../main'
+import { log } from 'util';
 
 export default {
   name: 'table-component',
@@ -24,7 +25,7 @@ export default {
       eventBus.$emit('beer-selected', this.beer)
     },
     handleCheckbox() {
-      
+      this.beer.isFavourite = !this.beer.isFavourite
     }
   }
 }
