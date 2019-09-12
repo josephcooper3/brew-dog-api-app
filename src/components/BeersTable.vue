@@ -9,7 +9,7 @@
       <tbody>
         <table-component v-for="(beer, index) in beers" v-bind:beer="beer" v-bind:key="index"></table-component>
       </tbody>
-    </table>
+  </table>
 </template>
 
 <script>

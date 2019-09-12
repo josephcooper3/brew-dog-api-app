@@ -6,18 +6,24 @@
 
 <script>
 import BeersTable from './components/BeersTable'
+import { eventBus } from './main'
 
 export default {
   name: 'app',
   data() {
     return {
       beers: [],
+      selectedBeer: null
     }
   },
   mounted () {
     fetch('https://api.punkapi.com/v2/beers')
     .then(result => result.json())
     .then(beers => this.beers = beers)
+
+    eventBus.$on('beer-selected', (beer) => {
+      this.selectedBeer = beer
+    })
   },
   components: {
     "beers-table": BeersTable,
