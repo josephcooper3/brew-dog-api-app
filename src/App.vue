@@ -8,6 +8,7 @@
 <script>
 import BeersTable from './components/BeersTable'
 import BeerDetail from './components/BeerDetail'
+import FavouritesList from './components/FavouritesList'
 import { eventBus } from './main'
 
 export default {
@@ -15,13 +16,17 @@ export default {
   data() {
     return {
       beers: [],
-      selectedBeer: null
+      selectedBeer: null,
+      favourites: []
     }
   },
   mounted () {
     fetch('https://api.punkapi.com/v2/beers')
     .then(result => result.json())
-    .then(beers => this.beers = beers)
+    .then(beers => this.beers = beers.map(beer => {
+      beer.favourite = false
+      return beer
+    }))
 
     eventBus.$on('beer-selected', (beer) => {
       this.selectedBeer = beer
@@ -29,7 +34,8 @@ export default {
   },
   components: {
     "beers-table": BeersTable,
-    "beer-detail": BeerDetail
+    "beer-detail": BeerDetail,
+    "favourites-list": FavouritesList
   }
 }
 </script>

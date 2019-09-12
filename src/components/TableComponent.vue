@@ -5,7 +5,9 @@
     <td>
       <img :src="beer.image_url">
     </td>
-    <td>fave btn goes here</td>
+    <td>
+      <input type="checkbox" v-on:click="handleCheckbox">
+    </td>
   </tr>
 </template>
 
@@ -20,6 +22,9 @@ export default {
   methods: {
     handleClick() {
       eventBus.$emit('beer-selected', this.beer)
+    },
+    handleCheckbox() {
+      
     }
   }
 }
